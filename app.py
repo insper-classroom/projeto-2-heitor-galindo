@@ -28,3 +28,6 @@ def remover_imovel(id):
 def listar_imoveis_por_tipo(tipo):
     return jsonify({"tipo": tipo})
 
+@app.route("/imoveis/cidade/<cidade>", methods=["GET"]) # Listar imóveis por cidade, 200
+def listar_imoveis_por_cidade(cidade):
+    return jsonify({"cidade": cidade})
