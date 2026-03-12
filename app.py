@@ -24,3 +24,7 @@ def atualizar_imovel(id):
 def remover_imovel(id):
     return "", 204
 
+@app.route("/imoveis/tipo/<tipo>", methods=["GET"]) # Listar imóveis por tipo, 200
+def listar_imoveis_por_tipo(tipo):
+    return jsonify({"tipo": tipo})
+
