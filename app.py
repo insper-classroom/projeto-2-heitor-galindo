@@ -19,3 +19,8 @@ def criar_imovel():
 def atualizar_imovel(id):
     data = request.json
     return jsonify({"id": id, **data})
+
+@app.route("/imoveis/<int:id>", methods=["DELETE"]) # Remover um imóvel, 204
+def remover_imovel(id):
+    return "", 204
+
