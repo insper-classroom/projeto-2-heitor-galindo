@@ -1,16 +1,11 @@
-'''
-ação	           código
-GET sucesso	       200
-POST criado	       201
-DELETE sucesso	   204
-não encontrado	   404
-erro de validação  400
-'''
-
 from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route("/imoveis", methods=["GET"])
+@app.route("/imoveis", methods=["GET"]) # Listar todos os imóveis
 def listar_imoveis():
     return jsonify([])
+
+@app.route("/imoveis/<int:id>", methods=["GET"]) # Listar imóvel por ID
+def buscar_imovel_por_id(id):
+    return jsonify({"id": id})
